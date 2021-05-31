@@ -1,3 +1,4 @@
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,10 +13,14 @@ public class TestPlan {
     public static void main(String[] args) {
         // ChromeDriver location set up in Utils class
         System.setProperty("webdriver.chrome.driver", Utils.CHROME_DRIVER_LOCATION);
+
+
     }
 
     @Test(testName = "Add Item to shopping cart")
     public static void addItem(){
+        driver.manage().window().maximize();
+
         driver.get(Utils.BASE_URL);
         WebForm webForm = new WebForm(driver);
 
